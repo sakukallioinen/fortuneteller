@@ -1,8 +1,8 @@
 # Layerfile for Node.js Fortune Teller App
-FROM node:14  # Specify Node.js version
+FROM node:21.6.1  # Specify Node.js version
 
 # Set the working directory
-WORKDIR /app
+WORKDIR /fortune-teller-app
 
 # Copy package.json and install dependencies
 COPY package.json ./

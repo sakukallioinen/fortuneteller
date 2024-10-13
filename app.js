@@ -13,7 +13,8 @@ const fortunes = [
     "You will meet someone who will change your life.",
     "Be open to new experiences.",
     "Good news will come your way soon.",
-    "Trust your instincts; they will lead you to success."
+    "Trust your instincts; they will lead you to success.",
+    "You will find joy in the little things."
 ];
 
 // Create the server

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortune Teller</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        #fortune {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fortune Teller</h1>
+    <button id="getFortuneButton">Get Your Fortune</button>
+    <div id="fortune"></div>
+
+    <script>
+        document.getElementById('getFortuneButton').onclick = async function() {
+            const response = await fetch('/getFortune', { method: 'POST' });
+            const data = await response.json();
+            document.getElementById('fortune').textContent = data.fortune;
+        };
+    </script>
+</body>
+</html>

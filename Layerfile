@@ -16,6 +16,6 @@ COPY . .
 RUN BACKGROUND npm start
 
 # Expose the application on the dynamic port assigned by webapp.io
-EXPOSE WEBSITE http://localhost:${PORT}
+EXPOSE WEBSITE http://localhost:3000
 
 

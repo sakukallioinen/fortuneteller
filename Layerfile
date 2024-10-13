@@ -1,0 +1,16 @@
+# Layerfile for Node.js Fortune Teller App
+FROM node:14  # Specify Node.js version
+
+# Set the working directory
+WORKDIR /app
+
+# Copy package.json and install dependencies
+COPY package.json ./
+RUN npm install
+
+# Copy the rest of your application code
+COPY . .
+
+# Start the application
+RUN npm start  # Assuming npm start runs your application
+

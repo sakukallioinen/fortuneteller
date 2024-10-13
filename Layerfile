@@ -1,16 +1,21 @@
-# Layerfile for Node.js Fortune Teller App
-FROM node:21.6.1  # Specify Node.js version
+FROM node:21.6.1  # Use a Node.js base image
 
-# Set the working directory
+# Set the working directory inside the VM
 WORKDIR /fortune-teller-app
 
-# Copy package.json and install dependencies
-COPY package.json ./
+# Copy package.json and package-lock.json files
+COPY package*.json ./
+
+# Install the necessary dependencies
 RUN npm install
 
-# Copy the rest of your application code
+# Copy the rest of the application code
 COPY . .
 
-# Start the application
-RUN npm start  # Assuming npm start runs your application
+# Start the application in the background
+RUN BACKGROUND npm start
+
+# Expose the application on the dynamic port assigned by webapp.io
+EXPOSE WEBSITE http://localhost:${PORT}
+
 
